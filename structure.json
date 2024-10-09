@@ -1,3 +1,6 @@
 {
-  "items": [{ "path": "scenario-test", "title": "Test scenario" }]
+  "items": [
+    { "path": "scenario-test", "title": "Test scenario" },
+    { "path": "Localstack", "title": "Localstack Tutorial" }
+  ]
 }
