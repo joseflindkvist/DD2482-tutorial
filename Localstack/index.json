@@ -1,0 +1,30 @@
+{
+  "title": "Simulating Serverless Architectures with LocalStack",
+  "description": "Learn how to simulate serverless architectures using LocalStack by deploying AWS Lambda and S3 services locally.",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      {
+        "title": "Setting Up LocalStack",
+        "text": "step1/step1.md"
+      },
+      {
+        "title": "Creating S3 and Lambda",
+        "text": "step2/step2.md"
+      },
+      {
+        "title": "Triggering Lambda with S3",
+        "text": "step3/step3.md"
+      }
+    ],
+    "intro": {
+      "text": "intro/intro.md",
+      "courseData": "intro/background.sh",
+      "code": "intro/foreground.sh"
+    },
+    "finish": {
+      "text": "finish/finish.md"
+    }
+  }
+}
