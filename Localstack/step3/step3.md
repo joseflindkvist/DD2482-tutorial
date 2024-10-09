@@ -4,7 +4,12 @@ We have configured an S3 event to trigger the Lambda function when a file is upl
 
 The Lambda function has now been triggered by uploading a file to S3.
 
-To check the Lambda logs, run the following command:
+You can verify the Lambda invocation by checking the logs.
+
+### Check the log streams:
 
 ```bash
-awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
+awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
+```
+
+This will show you the log output from the Lambda function's execution.

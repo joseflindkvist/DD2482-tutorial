@@ -13,4 +13,11 @@ awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial
 echo "This is a test file" > test.txt
 awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt
 
-echo "File uploaded. Lambda should be triggered!"
+# Wait a bit to ensure Lambda execution completes
+sleep 5
+
+# Confirm the file upload and Lambda trigger
+echo "File uploaded and Lambda should be triggered! Checking log streams..."
+
+# Describe the log streams for the Lambda function
+awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
