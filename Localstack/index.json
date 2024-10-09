@@ -7,7 +7,7 @@
     "steps": [
       {
         "title": "Setting Up LocalStack",
-        "courseData": "intro/background.sh",
+        "courseData": "step1/background.sh",
         "text": "step1/step1.md"
       },
       {
