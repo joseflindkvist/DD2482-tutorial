@@ -1,6 +1,6 @@
 ## Step 1: Creating an S3 Bucket with LocalStack
 
-Now that LocalStack is running, let's create an S3 bucket.
+<br>
 
 Run the following command to create the S3 bucket:
 
