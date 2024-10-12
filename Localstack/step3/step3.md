@@ -2,11 +2,7 @@
 
 We have configured an S3 event to trigger the Lambda function when a file is uploaded. Let's try it out!
 
-The Lambda function has now been triggered by uploading a file to S3.
 
-You can verify the Lambda invocation by checking the logs.
-
-### Check the log streams:
 This will show you the log output from the Lambda function's execution.
 
 ```

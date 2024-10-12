@@ -3,13 +3,11 @@
 We will now create an AWS Lambda function that will be triggered by S3 events. Next, we’re running this script. It creates a basic Python Lambda function file and deploys it using LocalStack.
 
 
-First we create the Lambda function file:
+First we create the Lambda function:
 ```
-cat <<EOF > lambda_function.py
 def handler(event, context):
     print("Hello from Lambda!")
     return {"statusCode": 200, "body": "Function executed successfully"}
-EOF’
 ```
 
 Then we zip the Lambda function:

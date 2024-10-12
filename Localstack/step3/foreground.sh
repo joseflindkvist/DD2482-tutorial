@@ -14,13 +14,12 @@ awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial
         ]
     }' >> $LOG_FILE 2>&1
 
-if [ $? -eq 0 ]; then
-    #✅ S3 event trigger for Lambda set up successfully.
-else
+if [ $? -ne 0 ]; then
     #❌ Failed to set up S3 event trigger. Exiting.
     cat $LOG_FILE
     exit 1
 fi
+ #✅ S3 event trigger for Lambda set up successfully.
 
 #🔄 Uploading a test file to S3... Please wait.
 echo "This is a test file" > test.txt
