@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Disable command echoing
+set +x
+
 # Step 1: Updating package lists
 echo "🔄 Updating package lists... Please wait."
 apt-get update > /dev/null 2>&1
@@ -26,6 +29,5 @@ while ! curl -s http://localhost:4566/health | grep "\"s3\": \"running\"" > /dev
   sleep 2
 done
 
-# LocalStack is now ready
 echo ""
 echo "🚀 LocalStack is ready! You can now proceed to the next step."
