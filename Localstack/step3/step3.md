@@ -7,9 +7,15 @@ The Lambda function has now been triggered by uploading a file to S3.
 You can verify the Lambda invocation by checking the logs.
 
 ### Check the log streams:
+This will show you the log output from the Lambda function's execution.
 
+```bash
+awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
+#Kolla om denna funakar istället
+```
+
+Then, view the logs to confirm the Lambda function was executed successfully.
 ```bash
 awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
 ```
 
-This will show you the log output from the Lambda function's execution.
