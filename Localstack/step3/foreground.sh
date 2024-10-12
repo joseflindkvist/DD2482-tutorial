@@ -25,13 +25,12 @@ fi
 echo "This is a test file" > test.txt
 awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt >> $LOG_FILE 2>&1
 
-if [ $? -eq 0 ]; then
-    #✅ Test file uploaded successfully.
-else
+if [ $? -ne 0 ]; then
     #❌ Failed to upload test file. Exiting.
     cat $LOG_FILE
     exit 1
 fi
+#✅ Test file uploaded successfully.
 
 # Wait for Lambda to process the file
 echo "⏳ Waiting for Lambda to process the file... (sleeping for 5 seconds)"
@@ -40,10 +39,10 @@ sleep 5
 #🔄 Checking log streams for the Lambda function...
 awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction >> $LOG_FILE 2>&1
 
-if [ $? -eq 0 ]; then
-    #✅ Log streams retrieved successfully.
-else
+if [ $? -ne 0 ]; then
     #❌ Failed to retrieve log streams. Exiting.
     cat $LOG_FILE
     exit 1
 fi
+    #✅ Log streams retrieved successfully.
+
