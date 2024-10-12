@@ -7,25 +7,24 @@
     "steps": [
       {
         "title": "Setting Up LocalStack",
-        "courseData": "step1/background.sh",
+        "foreground": "step1/background.sh",
         "text": "step1/step1.md"
       },
       {
         "title": "Creating S3 and Lambda",
 
-        "courseData": "step2/background.sh",
-          "code": "step2/foreground.sh",
+        "foreground": "step2/background.sh",
         "text": "step2/step2.md"
       },
       {
         "title": "Triggering Lambda with S3",
-        "code":"step3/foreground.sh",
+        "foreground":"step3/foreground.sh",
         "text": "step3/step3.md"
       }
     ],
     "intro": {
       "text": "intro/intro.md",
-      "code": "intro/foreground.sh"
+      "foreground": "intro/foreground.sh"
     },
     "finish": {
       "text": "finish/finish.md"
