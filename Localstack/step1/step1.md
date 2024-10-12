@@ -40,14 +40,14 @@ We can now proceed to create an S3 bucket.
 
 *Click on the command to copy it and paste it in the terminal to create the S3 bucket*:
 
-`
-awslocal s3api create-bucket --bucket my-devops-tutorial-bucket
-`
+
+`awslocal s3api create-bucket --bucket my-devops-tutorial-bucket`
+
 
 Once the bucket is created, you can list all S3 buckets using:
 
-```bash
+````bash
 awslocal s3api list-buckets
-```
+````
 
 Click **Next** to move on to creating a Lambda function.

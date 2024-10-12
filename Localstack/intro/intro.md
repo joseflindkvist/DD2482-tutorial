@@ -8,4 +8,4 @@ You will:
 - Create a Lambda function and an S3 bucket.
 - Set up an event trigger to invoke the Lambda function when a file is uploaded to S3.
 
-Click **Next** to start setting up LocalStack!
+Click **Start** to start setting up LocalStack!
