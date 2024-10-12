@@ -6,8 +6,8 @@
       {
         "title": "Step 1: Install Dependencies",
         "text": "step1/step1.md",
-        "courseData": "step1/background.sh",
-        "code": "step1/foreground.sh"
+        "background": "step1/background.sh",
+        "foreground": "step1/foreground.sh"
       },
       {
         "title": "Step 2: Create an S3 Bucket",
