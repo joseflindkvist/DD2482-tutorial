@@ -1,7 +1,6 @@
 # Update package lists and install Docker and Python pip
 apt-get update
 apt-get install -y docker.io python3-pip 
-apt install zip
 
 # Install LocalStack, AWS CLI, and awslocal CLI helper
 pip3 install localstack awscli awscli-local
