@@ -8,10 +8,6 @@ def handler(event, context):
 EOF
 #✅ Lambda function file created.
 
-#🔄 Installing the zip utility... Please wait.
-apt-get install -y zip > /dev/null 2>&1
-#✅ zip utility installed.
-
 #🔄 Zipping the Lambda function... This might take a moment.
 zip function.zip lambda_function.py > /dev/null 2>&1
 #✅ Lambda function zipped into function.zip.
