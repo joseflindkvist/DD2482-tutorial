@@ -12,17 +12,17 @@
       {
         "title": "Step 2: Create an S3 Bucket",
         "text": "step2/step2.md",
-        "code": "step2/foreground.sh"
+        "foreground": "step2/foreground.sh"
       },
       {
         "title": "Step 3: Deploy Lambda",
         "text": "step3/step3.md",
-        "code": "step3/foreground.sh"
+        "foreground": "step3/foreground.sh"
       }
     ],
     "intro": {
       "text": "intro/intro.md",
-      "code": "intro/foreground.sh"
+      "foreground": "intro/foreground.sh"
     },
     "finish": {
       "text": "finish/finish.md"
