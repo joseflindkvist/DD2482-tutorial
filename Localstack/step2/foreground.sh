@@ -1,24 +1,29 @@
-# Step 2: Create and Deploy the Lambda Function
+#!/bin/bash
 
-# Create the Lambda function file
+#🔄 Creating the Lambda function file... Please wait.
 cat <<EOF > lambda_function.py
 def handler(event, context):
     print("Hello from Lambda!")
     return {"statusCode": 200, "body": "Function executed successfully"}
 EOF
+#✅ Lambda function file created.
 
-# Zip the Lambda function
-apt install zip
+#🔄 Installing the zip utility... Please wait.
+apt-get install -y zip > /dev/null 2>&1
+#✅ zip utility installed.
 
-zip function.zip lambda_function.py
+#🔄 Zipping the Lambda function... This might take a moment.
+zip function.zip lambda_function.py > /dev/null 2>&1
+#✅ Lambda function zipped into function.zip.
 
-# Create the Lambda function in LocalStack
+#🔄 Deploying the Lambda function to LocalStack... Hang tight.
 awslocal lambda create-function --function-name myLambdaFunction \
     --runtime python3.8 \
     --handler lambda_function.handler \
     --zip-file fileb://function.zip \
-    --role arn:aws:iam::000000000000:role/lambda-role
+    --role arn:aws:iam::000000000000:role/lambda-role > /dev/null 2>&1
+#✅ Lambda function deployed to LocalStack.
 
-# Confirm that the function has been created
-echo "Lambda function created. Listing available Lambda functions..."
-awslocal lambda list-functions
+#🔄 Listing available Lambda functions...
+awslocal lambda list-functions | tee /dev/null
+#✅ Lambda functions listed.
