@@ -13,12 +13,14 @@
       {
         "title": "Step 2: Create an S3 Bucket",
         "text": "step2/step2.md",
-        "foreground": "step2/foreground.sh"
+        "foreground": "step2/foreground.sh",
+        "verify":"step2/verify.sh"
       },
       {
         "title": "Step 3: Deploy Lambda",
         "text": "step3/step3.md",
-        "foreground": "step3/foreground.sh"
+        "foreground": "step3/foreground.sh",
+        "verify":"step3/verify.sh"
       }
     ],
     "intro": {
