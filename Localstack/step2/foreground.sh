@@ -20,6 +20,3 @@ awslocal lambda create-function --function-name myLambdaFunction \
     --role arn:aws:iam::000000000000:role/lambda-role > /dev/null 2>&1
 #✅ Lambda function deployed to LocalStack.
 
-#🔄 Listing available Lambda functions...
-awslocal lambda list-functions | tee /dev/null
-#✅ Lambda functions listed.

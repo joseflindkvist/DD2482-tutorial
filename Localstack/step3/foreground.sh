@@ -1,4 +1,9 @@
-# Set up S3 event trigger for Lambda
+#!/bin/bash
+
+# Create a log file for this step
+LOG_FILE="/tmp/s3_lambda_setup.log"
+
+#🔄 Setting up S3 event trigger for Lambda... Please wait.
 awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial-bucket \
     --notification-configuration '{
         "LambdaFunctionConfigurations": [
@@ -7,17 +12,39 @@ awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial
                 "Events": ["s3:ObjectCreated:*"]
             }
         ]
-    }'
+    }' >> $LOG_FILE 2>&1
 
-# Upload a test file to S3 to trigger the Lambda function
+if [ $? -eq 0 ]; then
+    #✅ S3 event trigger for Lambda set up successfully.
+else
+    #❌ Failed to set up S3 event trigger. Exiting.
+    cat $LOG_FILE
+    exit 1
+fi
+
+#🔄 Uploading a test file to S3... Please wait.
 echo "This is a test file" > test.txt
-awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt
+awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt >> $LOG_FILE 2>&1
 
-# Wait a bit to ensure Lambda execution completes
+if [ $? -eq 0 ]; then
+    #✅ Test file uploaded successfully.
+else
+    #❌ Failed to upload test file. Exiting.
+    cat $LOG_FILE
+    exit 1
+fi
+
+# Wait for Lambda to process the file
+echo "⏳ Waiting for Lambda to process the file... (sleeping for 5 seconds)"
 sleep 5
 
-# Confirm the file upload and Lambda trigger
-echo "File uploaded and Lambda should be triggered! Checking log streams..."
+#🔄 Checking log streams for the Lambda function...
+awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction >> $LOG_FILE 2>&1
 
-# Describe the log streams for the Lambda function
-awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
+if [ $? -eq 0 ]; then
+    #✅ Log streams retrieved successfully.
+else
+    #❌ Failed to retrieve log streams. Exiting.
+    cat $LOG_FILE
+    exit 1
+fi

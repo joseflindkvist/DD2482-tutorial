@@ -1,6 +1,6 @@
 ## Step 3: Triggering Lambda with S3 Events
 
-We have configured an S3 event to trigger the Lambda function when a file is uploaded.
+We have configured an S3 event to trigger the Lambda function when a file is uploaded. Let's try it out!
 
 The Lambda function has now been triggered by uploading a file to S3.
 
@@ -9,12 +9,23 @@ You can verify the Lambda invocation by checking the logs.
 ### Check the log streams:
 This will show you the log output from the Lambda function's execution.
 
-```bash
-awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
-#Kolla om denna funakar istället
 ```
+echo "This is a test file" > test.txt
+awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt
+```{{exec}}
 
-Then, view the logs to confirm the Lambda function was executed successfully.
+The Lambda function should now be triggered by the file upload.
+
+Let’s confirm that the Lambda function was executed by checking the log streams. Run the command below to list the log streams for the Lambda function:
+
+```bash
+awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
+```{{exec}}
+
+This will return a list of log streams. Look for the log stream that matches the invocation time.
+
+Once you have the log stream name, replace `<log-stream-name>` in the following command and execute it to view the logs:
+
 ```bash
 awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
 ```
