@@ -13,7 +13,6 @@
       },
       {
         "title": "Creating S3 and Lambda",
-
         "foreground": "step2/foreground.sh",
         "text": "step2/step2.md"
       },
