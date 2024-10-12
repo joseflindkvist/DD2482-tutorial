@@ -45,7 +45,6 @@ We can now proceed to create an S3 bucket.
 ```
 awslocal s3api create-bucket --bucket my-devops-tutorial-bucket
 awslocal s3api list-buckets
-
 ```{{exec}}
 
 

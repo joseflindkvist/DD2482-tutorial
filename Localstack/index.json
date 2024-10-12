@@ -12,11 +12,14 @@
       },
       {
         "title": "Creating S3 and Lambda",
-        "code": "step2/foreground.sh",
+
+        "courseData": "step2/background.sh",
+          "code": "step2/foreground.sh",
         "text": "step2/step2.md"
       },
       {
         "title": "Triggering Lambda with S3",
+        "code":"step3/foreground.sh",
         "text": "step3/step3.md"
       }
     ],
