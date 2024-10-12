@@ -6,7 +6,6 @@ First we will install all the necessary things.
 Run the following command to create the S3 bucket:
 
 ````
-awslocal s3api create-bucket --bucket my-devops-tutorial-bucket
+`execute awslocal s3api create-bucket --bucket my-devops-tutorial-bucket`
 ```
-{{exec}}
-````
+
