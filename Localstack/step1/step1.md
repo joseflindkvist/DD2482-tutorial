@@ -36,18 +36,17 @@ LocalStack is a fully functional local cloud environment that allows you to emul
 
 LocalStack can be integrated into your CI/CD pipelines to run automated tests locally before deploying to production, making it ideal for teams adopting a DevOps workflow.
 
+*Wait for installation to complete. Its ready when you see "Ready" in the terminal.*
+
 We can now proceed to create an S3 bucket. 
 
-*Click on the command to copy it and paste it in the terminal to create the S3 bucket*:
+*Click on the command to create the S3 bucket and then list all buckets*:
 
-
-`awslocal s3api create-bucket --bucket my-devops-tutorial-bucket`
-
-
-Once the bucket is created, you can list all S3 buckets using:
-
-````bash
+```
+awslocal s3api create-bucket --bucket my-devops-tutorial-bucket
 awslocal s3api list-buckets
-````
+
+```{{exec}}
+
 
 Click **Next** to move on to creating a Lambda function.
