@@ -8,6 +8,8 @@ def handler(event, context):
 EOF
 
 # Zip the Lambda function
+apt install zip
+
 zip function.zip lambda_function.py
 
 # Create the Lambda function in LocalStack

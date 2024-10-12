@@ -7,7 +7,8 @@
     "steps": [
       {
         "title": "Setting Up LocalStack",
-        "foreground": "step1/background.sh",
+        "background": "step1/background.sh",
+        "foreground":"step1/foreground.sh",
         "text": "step1/step1.md"
       },
       {
