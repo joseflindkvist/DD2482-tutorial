@@ -23,6 +23,9 @@ This will return a list of log streams. Look for the log stream that matches the
 Once you have the log stream name, replace `<log-stream-name>` in the following command and execute it to view the logs:
 
 ```bash
-awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name <log-stream-name>
-```
+LOG_STREAM_NAME=$(awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction --query 'logStreams[0].logStreamName' --output text)
+
+awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log-stream-name "$LOG_STREAM_NAME"
+
+```{{exec}}
 
