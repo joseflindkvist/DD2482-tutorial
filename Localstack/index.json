@@ -30,5 +30,8 @@
     "finish": {
       "text": "finish/finish.md"
     }
+  },
+  "backend": {
+    "imageid": "ubuntu"
   }
 }
