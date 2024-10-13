@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# 🥚🐇
 # Create a log file for this step
 LOG_FILE="/tmp/s3_lambda_setup.log"
 

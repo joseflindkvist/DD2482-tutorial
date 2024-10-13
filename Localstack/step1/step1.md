@@ -35,7 +35,7 @@ LocalStack is a fully functional local cloud environment that allows you to emul
   - **DynamoDB**: For NoSQL database operations.
 
 LocalStack can be integrated into your CI/CD pipelines to run automated tests locally before deploying to production, making it ideal for teams adopting a DevOps workflow.
-
+##
 *Wait for installation to complete. Its ready when you see "Ready" in the terminal.*
 
 We can now proceed to create an S3 bucket. 
@@ -48,4 +48,4 @@ awslocal s3api list-buckets
 ```{{exec}}
 
 
-Click **Verify** to move on to creating a Lambda function.
+Click **Check** to move on to creating a Lambda function.

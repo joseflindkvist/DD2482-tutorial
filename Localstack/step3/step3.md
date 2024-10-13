@@ -3,7 +3,7 @@
 We have configured an S3 event to trigger the Lambda function when a file is uploaded. Let's try it out!
 
 
-This will show you the log output from the Lambda function's execution.
+This will show you the log output from the Lambda function's execution. ***click***
 
 ```
 echo "This is a test file" > test.txt
@@ -12,7 +12,7 @@ awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt
 
 The Lambda function should now be triggered by the file upload.
 
-Let’s confirm that the Lambda function was executed by checking the log streams. Run the command below to list the log streams for the Lambda function:
+Let’s confirm that the Lambda function was executed by checking the log streams. Run the command below to list the log streams for the Lambda function. ***click***
 
 ```bash
 awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
@@ -20,7 +20,7 @@ awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
 
 This will return a list of log streams. Look for the log stream that matches the invocation time.
 
-***Click the command below*** to view the logs of our lambda function. If we see "Hello from Lambda!", we've set it up correctly. 
+***click*** to view the logs of our lambda function. If we see *"Hello from Lambda!"*, we've set it up correctly. 
 
 ```bash
 LOG_STREAM_NAME=$(awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction --query 'logStreams[0].logStreamName' --output text)
@@ -29,4 +29,4 @@ awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log
 
 ```{{exec}}
 
-Click **Verify** to go to creating a DynamoDB in LocalStack.
+Click **Check** to go to creating a DynamoDB in LocalStack.

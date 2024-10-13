@@ -22,10 +22,12 @@ awslocal lambda create-function --function-name myLambdaFunction \
     --zip-file fileb://function.zip \
     --role arn:aws:iam::000000000000:role/lambda-role
 ```
-You can verify the Lambda function by listing all functions in LocalStack (***click the command below***):
+
+##
+You can verify the Lambda function by listing all functions in LocalStack (***click***):
 
 ```
 awslocal lambda list-functions
 ```{{exec}}
 
-Click **Verify** to set up S3 event triggers and test the Lambda function.
+Click **Check** to set up S3 event triggers and test the Lambda function.

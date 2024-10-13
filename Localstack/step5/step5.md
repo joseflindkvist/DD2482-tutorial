@@ -2,7 +2,7 @@
 
 We will modify the existing Lambda function so that, when triggered by an S3 event, it writes data to the DynamoDB table.
 
-Click the button below to update the Lambda function code:
+***Click*** the button below to update the Lambda function code:
 
 ```
 cat <<EOF > lambda_function.py
@@ -28,26 +28,26 @@ EOF
 
 This code modifies the Lambda function to write a new item to the DynamoDB table every time it is triggered by an S3 event.
 
-Now, zip the modified Lambda function and redeploy it:
+Now, zip the modified Lambda function and redeploy it ***click***:
 
 ```bash
 zip function.zip lambda_function.py
 ```{{exec}}
 
-Update the Lambda function with the new code:
+Update the Lambda function with the new code ***click***:
 
 ```bash
 awslocal lambda update-function-code --function-name myLambdaFunction --zip-file fileb://function.zip
 ```{{exec}}
 
-To trigger the Lambda function, upload another test file to the S3 bucket. This will cause the Lambda function to execute and insert a new item into the DynamoDB table:
+To trigger the Lambda function, upload another test file to the S3 bucket. This will cause the Lambda function to execute and insert a new item into the DynamoDB table ***click***:
 
 ```bash
 echo "test file" > test3.txt
 awslocal s3 cp test3.txt s3://my-devops-tutorial-bucket/test3.txt
 ```{{exec}}
 
-Now, let’s verify that the Lambda function successfully inserted the item into the DynamoDB table. Use the following command to scan the table and view all items:
+Now, let’s verify that the Lambda function successfully inserted the item into the DynamoDB table. Use the following command to scan the table and view all items ***click***:
 
 ```bash
 awslocal dynamodb scan --table-name myDevOpsTutorialTable
