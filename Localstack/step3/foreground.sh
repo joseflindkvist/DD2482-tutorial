@@ -4,6 +4,8 @@
 LOG_FILE="/tmp/s3_lambda_setup.log"
 
 #🔄 Setting up S3 event trigger for Lambda... Please wait.
+awslocal lambda wait function-active-v2 --function-name myLambdaFunction
+
 awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial-bucket \
     --notification-configuration '{
         "LambdaFunctionConfigurations": [
