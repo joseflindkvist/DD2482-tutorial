@@ -5,7 +5,7 @@ Let's take this tutorial even further. We will now use LocalStack to create a Dy
 ### Create a DynamoDB Table
 We can do this using the CreateTable API. We will create a table named `myDevOpsTutorialTable` using the command below.
 
-Click the code block to create the table.
+**Click** the code block to create the table.
 
 ```bash
 
@@ -14,11 +14,10 @@ awslocal dynamodb create-table \
     --attribute-definitions AttributeName=ID,AttributeType=S \
     --key-schema AttributeName=ID,KeyType=HASH \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
-    --stream-specification StreamEnabled=true,StreamViewType=NEW_IMAGE \
-    && echo "✅ DynamoDB table created successfully." >> "/tmp/dynamodb_setup.log"
+    --stream-specification StreamEnabled=true,StreamViewType=NEW_IMAGE \ >> "/tmp dynamodb_setup.log"
 ```{{exec}}
 
-We then define:
+The code above defines the following:
 - **Table name**: `"myDevOpsTutorialTable"`
 - **Attributes**: 
     - `AttributeName=ID`: Defines the `ID` attribute as the primary key.
@@ -28,7 +27,7 @@ We then define:
 - **Stream Specification**: DynamoDB Streams are enabled to track changes such as inserts, updates, and deletes.
 
 ### Insert an Item into the DynamoDB Table
-To put an item into the table, we use the `put-item` command. Click the code block below to add an item to the table.
+To put an item into the table, we use the `put-item` command. **Click** the code block below to add an item to the table.
 
 ```bash
 awslocal dynamodb put-item \
@@ -36,7 +35,7 @@ awslocal dynamodb put-item \
     --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Please let us"}}' >> "/tmp/dynamodb_setup.log"
 ```{{exec}}
 
-We are adding the following fields to the table:
+The code above adds an item with the following fields:
 - **ID**: `"123"`
 - **Name**: `"I Love DevOps"`
 - **Description**: `"Please let us pass"`
