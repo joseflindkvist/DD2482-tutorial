@@ -14,22 +14,12 @@ awslocal s3api put-bucket-notification-configuration --bucket my-devops-tutorial
         ]
     }' >> $LOG_FILE 2>&1
 
-if [ $? -ne 0 ]; then
-    #❌ Failed to set up S3 event trigger. Exiting.
-    cat $LOG_FILE
-    exit 1
-fi
  #✅ S3 event trigger for Lambda set up successfully.
 
 #🔄 Uploading a test file to S3... Please wait.
 echo "This is a test file" > test.txt
 awslocal s3 cp test.txt s3://my-devops-tutorial-bucket/test.txt >> $LOG_FILE 2>&1
 
-if [ $? -ne 0 ]; then
-    #❌ Failed to upload test file. Exiting.
-    cat $LOG_FILE
-    exit 1
-fi
 #✅ Test file uploaded successfully.
 
 # Wait for Lambda to process the file
@@ -39,10 +29,5 @@ sleep 5
 #🔄 Checking log streams for the Lambda function...
 awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction >> $LOG_FILE 2>&1
 
-if [ $? -ne 0 ]; then
-    #❌ Failed to retrieve log streams. Exiting.
-    cat $LOG_FILE
-    exit 1
-fi
     #✅ Log streams retrieved successfully.
 

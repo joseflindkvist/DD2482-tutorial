@@ -40,8 +40,7 @@ LocalStack can be integrated into your CI/CD pipelines to run automated tests lo
 
 We can now proceed to create an S3 bucket. 
 
-*Click on the command to create the S3 bucket and then list all buckets*:
-
+***Click on the command to create the S3 bucket and then list all buckets***:
 ```
 awslocal s3api create-bucket --bucket my-devops-tutorial-bucket
 awslocal s3api list-buckets
@@ -49,4 +48,4 @@ awslocal s3api list-buckets
 ```{{exec}}
 
 
-Click **Next** to move on to creating a Lambda function.
+Click **Verify** to move on to creating a Lambda function.

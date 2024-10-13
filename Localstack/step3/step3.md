@@ -20,7 +20,7 @@ awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction
 
 This will return a list of log streams. Look for the log stream that matches the invocation time.
 
-Once you have the log stream name, replace `<log-stream-name>` in the following command and execute it to view the logs:
+***Click the command below*** to view the logs of our lambda function. If we see "Hello from Lambda!", we've set it up correctly. 
 
 ```bash
 LOG_STREAM_NAME=$(awslocal logs describe-log-streams --log-group-name /aws/lambda/myLambdaFunction --query 'logStreams[0].logStreamName' --output text)
@@ -29,3 +29,4 @@ awslocal logs get-log-events --log-group-name /aws/lambda/myLambdaFunction --log
 
 ```{{exec}}
 
+Click **Verify** to go to creating a DynamoDB in LocalStack.

@@ -1,6 +1,6 @@
 ## Step 2: Creating an AWS Lambda Function
 
-We will now create an AWS Lambda function that will be triggered by S3 events. Next, we’re running this script. It creates a basic Python Lambda function file and deploys it using LocalStack.
+We will now create an AWS Lambda function that will be triggered by S3 events. Next, we’re running this script. It creates a basic Python Lambda function file and deploys it using LocalStack. 
 
 
 First we create the Lambda function:
@@ -22,10 +22,10 @@ awslocal lambda create-function --function-name myLambdaFunction \
     --zip-file fileb://function.zip \
     --role arn:aws:iam::000000000000:role/lambda-role
 ```
-You can verify the Lambda function by listing all functions in LocalStack:
+You can verify the Lambda function by listing all functions in LocalStack (***click the command below***):
 
 ```
 awslocal lambda list-functions
 ```{{exec}}
 
-Click **Next** to set up S3 event triggers and test the Lambda function.
+Click **Verify** to set up S3 event triggers and test the Lambda function.
