@@ -8,16 +8,17 @@ We can do this using the CreateTable API. We will create a table named `myDevOps
 Click the code block to create the table.
 
 ```bash
+
 awslocal dynamodb create-table \
     --table-name myDevOpsTutorialTable \
     --attribute-definitions AttributeName=ID,AttributeType=S \
     --key-schema AttributeName=ID,KeyType=HASH \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
     --stream-specification StreamEnabled=true,StreamViewType=NEW_IMAGE \
-    && echo "✅ DynamoDB table created successfully." >> /tmp/dynamodb_setup.log
+    && echo "✅ DynamoDB table created successfully." >> "/tmp/dynamodb_setup.log"
 ```{{exec}}
 
-We then defined:
+We then define:
 - **Table name**: `"myDevOpsTutorialTable"`
 - **Attributes**: 
     - `AttributeName=ID`: Defines the `ID` attribute as the primary key.
@@ -32,8 +33,7 @@ To put an item into the table, we use the `put-item` command. Click the code blo
 ```bash
 awslocal dynamodb put-item \
     --table-name myDevOpsTutorialTable \
-    --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Please let us pass"}}' \
-    && echo "✅ Item successfully put into DynamoDB table." >> /tmp/dynamodb_setup.log
+    --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Please let us"}}' >> "/tmp/dynamodb_setup.log"
 ```{{exec}}
 
 We are adding the following fields to the table:
