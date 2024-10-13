@@ -23,7 +23,7 @@ awslocal lambda create-function --function-name myLambdaFunction \
     --role arn:aws:iam::000000000000:role/lambda-role
 ```
 
-##
+---
 You can verify the Lambda function by listing all functions in LocalStack (***click***):
 
 ```
