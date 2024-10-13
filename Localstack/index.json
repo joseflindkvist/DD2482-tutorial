@@ -21,6 +21,12 @@
         "text": "step3/step3.md",
         "foreground": "step3/foreground.sh",
         "verify":"step3/verify.sh"
+      },
+      {
+        "title": "Step 3: Deploy Lambda",
+        "text": "step3/step3.md",
+        "foreground": "step3/foreground.sh",
+        "verify":"step3/verify.sh"
       }
     ],
     "intro": {
