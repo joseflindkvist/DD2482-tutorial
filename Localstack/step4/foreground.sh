@@ -18,27 +18,6 @@ if [ $? -ne 0 ]; then
 fi
 #✅ DynamoDB table created successfully.
 
-#🔄 Adding replicas for global tables... Please wait.
-awslocal dynamodb update-table \
-    --table-name myDevOpsTutorialTable \
-    --replica-updates '[{
-        "Create": {
-            "Opinion": "Dev-Ops-is-Cool"
-        }
-    },
-    {
-        "Create": {
-            "Opinion": "We-should-pass-this-tutorial"
-        }
-    }]' >> $LOG_FILE 2>&1
-
-if [ $? -ne 0 ]; then
-    #❌ Failed to create replicas. Exiting.
-    cat $LOG_FILE
-    exit 1
-fi
-#✅ Replicas for the DynamoDB table created successfully.
-
 #🔄 Putting an item into the DynamoDB table... Please wait.
 awslocal dynamodb put-item \
     --table-name myDevOpsTutorialTable \
