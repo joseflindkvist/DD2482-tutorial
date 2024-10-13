@@ -21,16 +21,16 @@ fi
 #🔄 Adding replicas for global tables... Please wait.
 awslocal dynamodb update-table \
     --table-name myDevOpsTutorialTable \
-    --replica-updates '{
-        "Create": [
-            {
-                "RegionName": "us-west-1"
-            },
-            {
-                "RegionName": "eu-west-1"
-            }
-        ]
-    }' >> $LOG_FILE 2>&1
+    --replica-updates '[{
+        "Create": {
+            "Opinion": "Dev-Ops-is-Cool"
+        }
+    },
+    {
+        "Create": {
+            "Opinion": "We-should-pass-this-tutorial"
+        }
+    }]' >> $LOG_FILE 2>&1
 
 if [ $? -ne 0 ]; then
     #❌ Failed to create replicas. Exiting.
