@@ -27,11 +27,6 @@
         "text": "step4/step4.md",
         "foreground": "step4/foreground.sh",
         "verify":"step4/verify.sh"
-      },
-
-      {
-        "title": "Step 5: Modify the Lambda function to interact with DynamoDB",
-        "text": "step5/step5.md"
       }
     ],
     "intro": {

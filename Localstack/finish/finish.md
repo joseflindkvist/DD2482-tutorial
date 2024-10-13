@@ -17,9 +17,4 @@ We created a simple Lambda function, zipped it, and deployed it to LocalStack. T
 We configured an S3 event to trigger the Lambda function whenever a file is uploaded to the S3 bucket. We then verified the function execution by checking the logs to ensure the Lambda function was triggered successfully.
 
 
-*Step 5: Modify the Lambda function to interact with DynamoDB*
-
-In this step, we modified the Lambda function to interact with DynamoDB. Now, every time a file is uploaded to the S3 bucket, the Lambda function inserts a new item into the DynamoDB table, simulating how Lambda can be used to interact with other AWS services in a serverless architecture.
-
-
 Thank you for participating!
