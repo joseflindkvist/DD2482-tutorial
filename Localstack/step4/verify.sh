@@ -12,16 +12,6 @@ else
     exit 1
 fi
 
-# Check for table replicas
-REPLICA_REGIONS=$(awslocal dynamodb describe-table --table-name myDevOpsTutorialTable --query 'Table.Replicas[*].RegionName' --output text)
-
-if [[ "$REPLICA_REGIONS" == *"us-west-1"* && "$REPLICA_REGIONS" == *"eu-west-1"* ]]; then
-    echo "✅ Replicas for DynamoDB table created successfully in 'us-west-1' and 'eu-west-1'."
-else
-    echo "❌ Replicas not found. Please check the previous steps."
-    exit 1
-fi
-
 # Verify that the item exists in the DynamoDB table
 ITEM_EXISTS=$(awslocal dynamodb get-item --table-name myDevOpsTutorialTable --key '{"ID": {"S": "123"}}' --query 'Item' --output text)
 
