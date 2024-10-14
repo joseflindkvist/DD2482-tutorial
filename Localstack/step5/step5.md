@@ -7,23 +7,22 @@ We will modify the existing Lambda function so that, when triggered by an S3 eve
 
 ```
 cat <<EOF > lambda_function.py
+import json
 import boto3
+import urllib.parse
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('myDevOpsTutorialTable')
 
 def handler(event, context):
-    dynamodb = boto3.resource('dynamodb', endpoint_url='http://localhost:4566')
-    table = dynamodb.Table('myDevOpsTutorialTable')
-
-    # Put an item into DynamoDB
-    table.put_item(
-       Item={
-            'ID': '456',  # You can make this dynamic based on event or logic
-            'Name': 'S3 Event Triggered',
-            'Description': 'This item was created by a Lambda function triggered by an S3 event.'
-        }
-    )
-
-    print("Item inserted into DynamoDB!")
-    return {"statusCode": 200, "body": "DynamoDB interaction successful!"}
+       
+        response = table.put_item(
+            Item={
+                'ID': '457',  # Using the S3 object key as the ID
+                'Name': 'Hi from Lambda Function',
+                'Description': 'We added this from out lambda function'
+            }
+        )
 EOF
 ```{{exec}}
 
