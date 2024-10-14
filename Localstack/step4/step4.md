@@ -27,7 +27,7 @@ The code above defines the following:
 - **Provisioned Throughput**: The table can handle up to 5 consistent reads and writes per second.
 - **Stream Specification**: DynamoDB Streams are enabled to track changes such as inserts, updates, and deletes.
 
-**About the log-output:**: If the creation of the table succeeded, you should see ```AWS dynamodb.CreateTable => 200```.  
+**About the log-output:**: If the creation of the table succeeded, you should see AWS dynamodb.CreateTable => 200.  
 ### Step 4.2: Insert an Item into the DynamoDB Table
 To put an item into the table, we use the `put-item` command. **Click** the code block below to add an item to the table.
 

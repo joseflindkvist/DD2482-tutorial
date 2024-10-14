@@ -3,7 +3,7 @@ Lambda on LocalStack enables you to simulate AWS Lambda functions in a local dev
 
 In this step, we will create an AWS Lambda function that will be triggered by S3 events *(notification triggered by specific actions or changes that within an Amazon S3 bucket)*. The following script will generate a basic Python Lambda function and deploy it using LocalStack. While steps 1-3 will run automatically in the background, let's take a minute to review them to understand the process:
 
-### Step 2.1: Create the Lambda function**
+### Step 2.1: Create the Lambda function
 In this step, we create a simple Lambda function that prints "Hello from Lambda" when triggered. 
 ```
 def handler(event, context):
@@ -11,12 +11,12 @@ def handler(event, context):
     return {"statusCode": 200, "body": "Function executed successfully"}
 ```
 
-### Step 2.2: Zip the Lambda function**
+### Step 2.2: Zip the Lambda function
 When you deploy a Lambda function, AWS requires that the code and its dependencies are packaged in a compressed format such as *.zip*.
 ```
 zip function.zip lambda_function.py
 ```
-### Step 2.3: Deploy the Lambda function to LocalStack**
+### Step 2.3: Deploy the Lambda function to LocalStack
 We use the 
 ```
 awslocal lambda create-function --function-name myLambdaFunction \
