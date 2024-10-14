@@ -8,13 +8,14 @@ We can do this using the CreateTable API. We will create a table named `myDevOps
 **Click** the code block to create the table.
 
 ```bash
-
 awslocal dynamodb create-table \
     --table-name myDevOpsTutorialTable \
     --attribute-definitions AttributeName=ID,AttributeType=S \
     --key-schema AttributeName=ID,KeyType=HASH \
     --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5 \
-    --stream-specification StreamEnabled=true,StreamViewType=NEW_IMAGE \ >> "/tmp dynamodb_setup.log"
+    --stream-specification StreamEnabled=true,StreamViewType=NEW_IMAGE \
+    >> "/tmp/dynamodb_setup.log" 2>&1
+
 ```{{exec}}
 
 The code above defines the following:
@@ -26,25 +27,30 @@ The code above defines the following:
 - **Provisioned Throughput**: The table can handle up to 5 consistent reads and writes per second.
 - **Stream Specification**: DynamoDB Streams are enabled to track changes such as inserts, updates, and deletes.
 
+**About the log-output:**: If the creation of the table succeeded, you should see ```AWS dynamodb.CreateTable => 200```.  
 ### Step 4.2: Insert an Item into the DynamoDB Table
 To put an item into the table, we use the `put-item` command. **Click** the code block below to add an item to the table.
 
 ```bash
 awslocal dynamodb put-item \
     --table-name myDevOpsTutorialTable \
-    --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Please let us"}}' >> "/tmp/dynamodb_setup.log"
+    --item '{"ID": {"S": "124"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Because it's so fun"}}' >> "/tmp/dynamodb_setup.log"
 ```{{exec}}
 
 The code above adds an item with the following fields:
 - **ID**: `"123"`
 - **Name**: `"I Love DevOps"`
-- **Description**: `"Please let us pass"`
+- **Description**: `"Because it's so fun"`
 
+Feel free to try to add you own item to the table using the syntax above. 
 ### Step 4.3: Query the number of items in the table
 You check that the item was added by using the DescribetTable API to query the number of items in the table by running this code:
+
+```bash
 awslocal dynamodb describe-table \
     --table-name myDevOpsTutorialTable \
-    --query 'Table.ItemCount' 
+    --query 'Table.ItemCount' \
+ 
 ```{{exec}}
 
 Click **Check** to learn how to use a Lambda function to update the DynamoDB table.

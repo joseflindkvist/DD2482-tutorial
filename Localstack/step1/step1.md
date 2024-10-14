@@ -14,7 +14,7 @@ These tools include…
 - Python pip3
   `install python3-pip`
 
-### Introduction to LocalStack**
+### Introduction to LocalStack
 
 While we wait for the installation to complete, let’s talk about LocalStack!
 
@@ -27,8 +27,8 @@ LocalStack is a fully functional local cloud environment that allows you to emul
 
   - **S3**: For object storage.
   - **Lambda**: For serverless functions.
-  - **API Gateway**: For managing and deploying APIs.
-  - **DynamoDB**: For NoSQL database operations. 
+  - **DynamoDB**: For NoSQL database operations.
+  - **API Gateway**: For managing and deploying APIs. 
 
 LocalStack can be integrated into your CI/CD pipelines to run automated tests locally before deploying to production, making it ideal for teams adopting a DevOps workflow.
 
@@ -44,4 +44,4 @@ awslocal s3api list-buckets
 
 ```{{exec}}
 
-Click **Check** to move on to creating a Lambda function.
+➡️ Click **Check** to move on to creating a Lambda function.
