@@ -32,6 +32,7 @@ LocalStack is a fully functional local cloud environment that allows you to emul
 
 LocalStack can be integrated into your CI/CD pipelines to run automated tests locally before deploying to production, making it ideal for teams adopting a DevOps workflow.
 
+![understanding-local-stack-schema](understanding-localstack-overview.png)
 ---
 *Wait for installation to complete. Its ready when you see "Ready" in the terminal.*
 
