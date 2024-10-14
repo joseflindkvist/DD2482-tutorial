@@ -34,7 +34,7 @@ To put an item into the table, we use the `put-item` command. **Click** the code
 ```bash
 awslocal dynamodb put-item \
     --table-name myDevOpsTutorialTable \
-    --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Because it's so fun"}}' >> "/tmp/dynamodb_setup.log"
+    --item '{"ID": {"S": "123"}, "Name": {"S": "I Love DevOps"}, "Description": {"S": "Because its so fun"}}' >> "/tmp/dynamodb_setup.log"
 ```{{exec}}
 
 The code above adds an item with the following fields:
