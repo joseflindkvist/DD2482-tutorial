@@ -24,3 +24,5 @@ done
 
 echo ""
 echo "🚀 LocalStack DynamoDB and Lambda are ready."
+
+##Background executeion failed

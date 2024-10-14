@@ -19,7 +19,8 @@ We configured an S3 event to trigger the Lambda function whenever a file is uplo
 *Step 4: Creating and Interacting with a DynamoDB Table*
 In this step, we demonstrated how to use LocalStack to simulate AWS DynamoDB services. We created a DynamoDB table named myDevOpsTutorialTable and inserted an item into the table using the put-item command. After inserting the item, we verified the table's contents by querying the number of items to ensure that the operation was successful.
 
-*Step 5: Triggering Lambda via S3 Events*
+*Step 5: Modify Lambda function to interact with DynamoDB*
+
 We extended the functionality of our Lambda function to interact with the DynamoDB table. By modifying the Lambda code, we enabled it to insert new data into the DynamoDB table whenever triggered by an S3 event. After redeploying the Lambda function, we uploaded a file to the S3 bucket, which triggered the function, and confirmed the successful insertion of a new item by scanning the DynamoDB table.
 
 Thank you for participating!

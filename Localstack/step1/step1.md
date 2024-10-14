@@ -33,6 +33,9 @@ LocalStack is a fully functional local cloud environment that allows you to emul
 LocalStack can be integrated into your CI/CD pipelines to run automated tests locally before deploying to production, making it ideal for teams adopting a DevOps workflow.
 
 ![understanding-local-stack-schema](./image.png)
+Representation of a development flow where LocalStack is used throughout local development and CI stages to simulate AWS services, and finally, the application is deployed to AWS for production use.
+![local-development-setup](./graph.png)
+How a local development setup can interact with LocalStack to perform AWS services such as S3, Lambda, DynamoDB during the development process, all within a Docker container.
 ---
 *Wait for installation to complete. Its ready when you see "Ready" in the terminal.*
 
