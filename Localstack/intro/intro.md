@@ -7,5 +7,6 @@ You will:
 - Set up LocalStack to simulate AWS services.
 - Create a Lambda function and an S3 bucket.
 - Set up an event trigger to invoke the Lambda function when a file is uploaded to S3.
+- Create a DynamoDB table using localstack, with and without a Lambda function. 
 
 Click **Start** to start setting up LocalStack!

@@ -1,8 +1,8 @@
 ## Step 4: Creating a DynamoDB table
 
-Let's take this tutorial even further. We will now use LocalStack to create a DynamoDB table and put an item into the table using the AWS CLI.
+Let's take this tutorial even further. We will now demonstrate one of LocalStacks many services. LocalStack allows you to use the DynamoDB API's such as *create-table* and *put-item*. In this step, we will use AWS CLI and the awslocal wrapper to create an example table and put an item in the table.
 
-### Create a DynamoDB Table
+### Step 4.1: Create a DynamoDB Table
 We can do this using the CreateTable API. We will create a table named `myDevOpsTutorialTable` using the command below.
 
 **Click** the code block to create the table.
@@ -26,7 +26,7 @@ The code above defines the following:
 - **Provisioned Throughput**: The table can handle up to 5 consistent reads and writes per second.
 - **Stream Specification**: DynamoDB Streams are enabled to track changes such as inserts, updates, and deletes.
 
-### Insert an Item into the DynamoDB Table
+### Step 4.2: Insert an Item into the DynamoDB Table
 To put an item into the table, we use the `put-item` command. **Click** the code block below to add an item to the table.
 
 ```bash
@@ -39,3 +39,12 @@ The code above adds an item with the following fields:
 - **ID**: `"123"`
 - **Name**: `"I Love DevOps"`
 - **Description**: `"Please let us pass"`
+
+### Step 4.3: Query the number of items in the table
+You check that the item was added by using the DescribetTable API to query the number of items in the table by running this code:
+awslocal dynamodb describe-table \
+    --table-name myDevOpsTutorialTable \
+    --query 'Table.ItemCount' 
+```{{exec}}
+
+Click **Check** to learn how to use a Lambda function to update the DynamoDB table.
