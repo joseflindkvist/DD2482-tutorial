@@ -1,4 +1,4 @@
-##Step 5: Modify the Lambda function to Interact with DynamoDB
+## Step 5: Modify the Lambda function to Interact with DynamoDB
 
 We will modify the existing Lambda function so that, when triggered by an S3 event, it writes data to the DynamoDB table.
 
